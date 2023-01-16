@@ -1,0 +1,43 @@
+<div>
+  <div>
+    <div class="full-width">
+      <h1>Gemeinde Mashup</h1>
+    </div>
+    <div class="full-width">
+      <p>Gebe deine Gemeinde und deinen Arbeitsort ein und erfahre mögliche Verkehrsverbindungen, das Wetter in der Gemeinde und Schweizer Informationsdaten.</p>
+    </div>
+    <div class="full-width">
+      <mat-card>
+        <mat-form-field appearance="fill">
+          <mat-label>Gemeinde</mat-label>
+          <input matInput [(ngModel)]="municipality">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Arbeitsort</mat-label>
+          <input matInput [(ngModel)]="workplace">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" style="float: right" (click)="submit()">Suchen</button>
+      </mat-card>
+    </div>
+  </div>
+  <br>
+  <div class="full-width">
+    <mat-card class="half-width">
+      <h2>Verbindungsmöglichkeiten</h2>
+    </mat-card>
+  </div>
+  <br>
+  <div class="full-width">
+    <mat-card class="half-width">
+      <h2>Wetter</h2>
+    </mat-card>
+  </div>
+  <br>
+  <div class="full-width">
+    <mat-card class="half-width">
+      <h2> Schweizer Informationsdaten</h2>
+    </mat-card>
+  </div>
+</div>
