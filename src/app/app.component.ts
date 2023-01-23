@@ -14,6 +14,7 @@ export class AppComponent {
   weatherMunicipality: any;
   weatherWorkplace: any;
   trafficConnections: any;
+  population: any;
 
   constructor(private api: ApiService, private loaderService: LoaderService) {
   }
@@ -23,10 +24,11 @@ export class AppComponent {
 
     this.api.getTrafficConnections(this.municipality, this.workplace).subscribe(response => {
       this.trafficConnections = response;
-      let responseWeather = forkJoin([this.api.getWeather(response.from.coordinate.x, response.from.coordinate.y), this.api.getWeather(response.to.coordinate.x, response.to.coordinate.y)])
+      let responseWeather = forkJoin([this.api.getWeather(response.from.coordinate.x, response.from.coordinate.y), this.api.getWeather(response.to.coordinate.x, response.to.coordinate.y), this.api.getPopulation()])
       responseWeather.subscribe(responseList => {
         this.weatherMunicipality = responseList[0];
         this.weatherWorkplace = responseList[1];
+        this.population = responseList[2];
         this.loaderService.loading = false;
       })
     })

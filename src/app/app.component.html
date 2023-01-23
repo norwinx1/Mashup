@@ -50,10 +50,13 @@
     </mat-card>
   </div>
   <br>
-  <div class="full-width">
+  <div *ngIf="population" class="full-width">
     <mat-card class="card-width">
-      <h2>Schweizer Informationsdaten</h2>
-      <p>Lorem ipsum</p>
+      <h2>Informationsdaten</h2>
+      <app-swiss-info [population]="population">
+      </app-swiss-info>
     </mat-card>
   </div>
+  <br>
+  <br>
 </div>

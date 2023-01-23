@@ -17,13 +17,15 @@ import {WeatherComponent} from './components/weather/weather.component';
 import {MatTableModule} from "@angular/material/table";
 import {ApiInterceptor} from "./services/api.interceptor";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { SwissInfoComponent } from './components/swiss-info/swiss-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoaderComponent,
     TrafficConnectionsComponent,
-    WeatherComponent
+    WeatherComponent,
+    SwissInfoComponent
   ],
   imports: [
     BrowserModule,
