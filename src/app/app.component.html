@@ -27,7 +27,7 @@
   </div>
   <br>
   <div *ngIf="trafficConnections" class="full-width">
-    <mat-card>
+    <mat-card class="card-width">
       <h2>Verbindungsmöglichkeiten</h2>
       <app-traffic-connections [trafficConnections]="trafficConnections">
       </app-traffic-connections>
@@ -35,7 +35,7 @@
   </div>
   <br>
   <div *ngIf="weather" class="full-width">
-    <mat-card>
+    <mat-card class="card-width">
       <h2>Wetter</h2>
       <app-weather [weather]="weather">
       </app-weather>
@@ -43,7 +43,7 @@
   </div>
   <br>
   <div class="full-width">
-    <mat-card>
+    <mat-card class="card-width">
       <h2>Schweizer Informationsdaten</h2>
       <p>Lorem ipsum</p>
     </mat-card>

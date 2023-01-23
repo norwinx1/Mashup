@@ -14,6 +14,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { TrafficConnectionsComponent } from './components/traffic-connections/traffic-connections.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { WeatherComponent } from './components/weather/weather.component';
     MatDividerModule,
     FormsModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

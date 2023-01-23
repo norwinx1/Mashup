@@ -8,8 +8,8 @@ import {LoaderService} from "./services/loader.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  municipality = "";
-  workplace = "";
+  municipality = "Zürich";
+  workplace = "Winterthur";
   weather: any;
   trafficConnections: any;
 
