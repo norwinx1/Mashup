@@ -9,10 +9,14 @@ import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
 import {MatDividerModule} from "@angular/material/divider";
 import {FormsModule} from "@angular/forms";
+import { LoaderComponent } from './components/loader/loader.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import {FormsModule} from "@angular/forms";
     MatButtonModule,
     HttpClientModule,
     MatDividerModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

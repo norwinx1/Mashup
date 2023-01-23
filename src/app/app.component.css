@@ -3,9 +3,3 @@
   display: flex;
   justify-content: center;
 }
-
-.half-width {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-}
