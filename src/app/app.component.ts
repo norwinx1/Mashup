@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ApiService} from "./services/api.service";
 import {LoaderService} from "./services/loader.service";
+import {forkJoin} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import {LoaderService} from "./services/loader.service";
 export class AppComponent {
   municipality = "Zürich";
   workplace = "Winterthur";
-  weather: any;
+  weatherMunicipality: any;
+  weatherWorkplace: any;
   trafficConnections: any;
 
   constructor(private api: ApiService, private loaderService: LoaderService) {
@@ -18,24 +20,14 @@ export class AppComponent {
 
   submit(): void {
     this.loaderService.loading = true;
-    let trafficConnectionsLoading = true;
-    let weatherLoading = true;
 
     this.api.getTrafficConnections(this.municipality, this.workplace).subscribe(response => {
       this.trafficConnections = response;
-      trafficConnectionsLoading = false;
-      if (!trafficConnectionsLoading && !weatherLoading) {
+      let responseWeather = forkJoin([this.api.getWeather(response.from.coordinate.x, response.from.coordinate.y), this.api.getWeather(response.to.coordinate.x, response.to.coordinate.y)])
+      responseWeather.subscribe(responseList => {
+        this.weatherMunicipality = responseList[0];
+        this.weatherWorkplace = responseList[1];
         this.loaderService.loading = false;
-      }
-    })
-
-    this.api.getMunicipality(this.municipality).subscribe(response => {
-      this.api.getWeather(response.results[0].latitude, response.results[0].longitude).subscribe(response2 => {
-        this.weather = response2;
-        weatherLoading = false;
-        if (!trafficConnectionsLoading && !weatherLoading) {
-          this.loaderService.loading = false;
-        }
       })
     })
   }

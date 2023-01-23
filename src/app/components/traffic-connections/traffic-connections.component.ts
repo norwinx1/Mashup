@@ -20,11 +20,21 @@ export class TrafficConnectionsComponent implements OnInit {
       let connection = this.trafficConnections.connections[i];
       let c = {} as Connection;
       c.train = connection.products[0];
-      c.platform = connection.from.platform;
+      c.platform = this.cleanPlatform(connection.from.platform);
       c.departure = connection.from.departure;
       c.arrival = connection.to.arrival;
       this.dataSource.push(c);
     }
+  }
+
+  /**
+   * Cleans the platform from ! at the end of the string.
+   * The exclamation mark is used to determine if the platform changed, but it's not used here.
+   * @param platform the platform string to clean
+   * @return the cleaned platform string
+   */
+  cleanPlatform(platform: string): string {
+    return platform.endsWith("!") ? platform.substring(0, platform.length - 1) : platform;
   }
 
 }

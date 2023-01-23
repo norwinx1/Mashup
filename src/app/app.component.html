@@ -34,10 +34,18 @@
     </mat-card>
   </div>
   <br>
-  <div *ngIf="weather" class="full-width">
+  <div *ngIf="weatherMunicipality" class="full-width">
     <mat-card class="card-width">
-      <h2>Wetter</h2>
-      <app-weather [weather]="weather">
+      <h2>Wetter in {{municipality}}</h2>
+      <app-weather [weather]="weatherMunicipality">
+      </app-weather>
+    </mat-card>
+  </div>
+  <br>
+  <div *ngIf="weatherWorkplace" class="full-width">
+    <mat-card class="card-width">
+      <h2>Wetter in {{workplace}}</h2>
+      <app-weather [weather]="weatherWorkplace">
       </app-weather>
     </mat-card>
   </div>

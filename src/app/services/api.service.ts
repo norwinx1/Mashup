@@ -15,7 +15,7 @@ export class ApiService {
   }
 
   getWeather(lat: string, long: string): Observable<any> {
-    return this.httpClient.get<any>("https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + long + "&hourly=temperature_2m,rain,cloudcover,windspeed_10m")
+    return this.httpClient.get<any>("https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + long + "&hourly=temperature_2m,rain,cloudcover,windspeed_10m,weathercode")
   }
 
   getTrafficConnections(municipality: string, workplace: string): Observable<any> {

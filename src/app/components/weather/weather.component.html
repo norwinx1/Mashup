@@ -1,1 +1,5 @@
-<p>weather works!</p>
+<img [src]="'assets/'+getWeatherIcon()+'.svg'" alt="Weather Icon" id="weather-icon">
+<h3>Temperatur: {{weather.hourly.temperature_2m[0]}} °C</h3>
+<h3>Regen: {{weather.hourly.rain[0]}} mm</h3>
+<h3>Bewölkung: {{weather.hourly.cloudcover[0]}}%</h3>
+<h3>Windgeschwindigkeit: {{weather.hourly.windspeed_10m[0]}} km/h</h3>

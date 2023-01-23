@@ -2,7 +2,7 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%">
 
   <ng-container matColumnDef="train">
-    <th mat-header-cell *matHeaderCellDef> Zug </th>
+    <th mat-header-cell *matHeaderCellDef> ÖV </th>
     <td mat-cell *matCellDef="let element"> {{element.train}} </td>
   </ng-container>
 
@@ -13,12 +13,12 @@
 
   <ng-container matColumnDef="departure">
     <th mat-header-cell *matHeaderCellDef> Abfahrt </th>
-    <td mat-cell *matCellDef="let element"> {{element.departure}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.departure | date: 'HH:mm'}} </td>
   </ng-container>
 
   <ng-container matColumnDef="arrival">
     <th mat-header-cell *matHeaderCellDef> Ankunft </th>
-    <td mat-cell *matCellDef="let element"> {{element.arrival}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.arrival | date: 'HH:mm'}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
