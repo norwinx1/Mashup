@@ -18,7 +18,7 @@ export class ApiService {
     return this.httpClient.get<any>("https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + long + "&hourly=temperature_2m,rain,cloudcover,windspeed_10m")
   }
 
-  getTrafficConnection(municipality: string, workplace: string): Observable<any> {
+  getTrafficConnections(municipality: string, workplace: string): Observable<any> {
     return this.httpClient.get<any>("http://transport.opendata.ch/v1/connections?from=" + municipality + "&to=" + workplace)
   }
 }

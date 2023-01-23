@@ -6,7 +6,8 @@
       <h1>Gemeinde Mashup</h1>
     </div>
     <div class="full-width">
-      <p>Gebe deine Gemeinde und deinen Arbeitsort ein und erfahre mögliche Verkehrsverbindungen, das Wetter in der Gemeinde und Schweizer Informationsdaten.</p>
+      <p>Gebe deine Gemeinde und deinen Arbeitsort ein und erfahre mögliche Verkehrsverbindungen, das Wetter in der
+        Gemeinde und Schweizer Informationsdaten.</p>
     </div>
     <div class="full-width">
       <mat-card>
@@ -25,17 +26,19 @@
     </div>
   </div>
   <br>
-  <div class="full-width">
+  <div *ngIf="trafficConnections" class="full-width">
     <mat-card>
       <h2>Verbindungsmöglichkeiten</h2>
-      <p>{{trafficConnection}}</p>
+      <app-traffic-connections [trafficConnections]="trafficConnections">
+      </app-traffic-connections>
     </mat-card>
   </div>
   <br>
-  <div class="full-width">
+  <div *ngIf="weather" class="full-width">
     <mat-card>
       <h2>Wetter</h2>
-      <p>{{weather}}</p>
+      <app-weather [weather]="weather">
+      </app-weather>
     </mat-card>
   </div>
   <br>

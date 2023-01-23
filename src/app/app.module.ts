@@ -12,11 +12,15 @@ import {FormsModule} from "@angular/forms";
 import { LoaderComponent } from './components/loader/loader.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { TrafficConnectionsComponent } from './components/traffic-connections/traffic-connections.component';
+import { WeatherComponent } from './components/weather/weather.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoaderComponent
+    LoaderComponent,
+    TrafficConnectionsComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
